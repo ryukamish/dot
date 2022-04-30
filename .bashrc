@@ -134,6 +134,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias '?'=duck
+alias '??'=google
 alias chmox='chmod +x'
 alias free='free -h'
 alias c='printf "\e[H\e[2J"'
