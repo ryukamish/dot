@@ -1,8 +1,6 @@
 # My Personal Configuration
 
-## Installation
-
-Many of the configs are inspired from [rwxrob]<https://github.com/rwxrob> and [Luke Smith]<https://github.com/Lukesmithxyz>.
+Many of the configs are inspired from [rwxrob](https://github.com/rwxrob) and [Luke Smith](https://github.com/Lukesmithxyz).
 
 - Directory structure
 
