@@ -2,20 +2,20 @@
 
 ## Installation
 
-Many of the configs are inspired from [https://github.com/rwxrob][rwxrob] and [https://github.com/Lukesmithxyz][Luke Smith].
+Many of the configs are inspired from [rwxrob][https://github.com/rwxrob] and [Luke Smith][https://github.com/Lukesmithxyz].
 
 - Directory structure
 
 ```
 `$HOME`
     |
-    -- [.bashrc][`$REPOS`]
+    -- repos
         |
         -- github.com
             |
-            -- [.bashrc][`$GITUSER`]
+            -- ryukamish
                 |
-                -- (repo name)
+                -- dot
 ```
 
 ## Legal
