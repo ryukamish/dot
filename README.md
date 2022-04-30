@@ -18,5 +18,5 @@ Many of the configs are inspired from [rwxrob](https://github.com/rwxrob) and [L
 
 ## Legal
 
-Copyright 2022 Kunal Munda <https://github.com/ryukamish>
+Copyright 2022 Kunal Munda <https://github.com/ryukamish> <br>
 Released under Apache-2.0 Licence
