@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -f "$PWD/xprofile" ]; then
+    . "$PWD/xprofile"
+else
+    . $HOME/.xprofile
+fi
+
+ssh-agent dwm
+
+# loop through dwm; hot reload
+while type dwm >/dev/null; do dwm && continue || break ; done

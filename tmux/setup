@@ -1,0 +1,4 @@
+#!/bin/sh
+test type tmux >/dev/null 2>&1 && echo "TMUX isn't installed." && exit 1
+mkdir .config/tmux
+ln -sf "$PWD/tmux.conf" "$HOME/.config/tmux/tmux.conf"

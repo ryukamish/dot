@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -z $(which lynx) ] && return
+
+exec lynx "https://google.com/search?q=$*"

@@ -1,0 +1,27 @@
+# for Linux distributions which uses /etc for default files
+$include /etc/inputrc
+# Vim-style keybinding
+set editing-mode vi
+$if mode=vi
+    # Set up Vim-style tab completion
+    TAB: menu-complete
+    set show-all-if-ambiguous on
+
+    # set completion ignore case
+    set completion-ignore-case on
+    # use GNU ls colors when tab-completing files
+    set colored-stats on
+    # If a tab-completed file is a symlink to a directory
+    # treat it like a directory not a file
+    set mark-symlinked-directories on
+
+    set keymap vi-command
+    # these are for vi-command
+    Control-l: clear-screen
+    Control-a: beginning-of-line
+
+    set keymap vi-insert
+    # these are for vi-insert mode
+    Control-l: clear-screen
+    Control-a: beginning-of-line
+$endif

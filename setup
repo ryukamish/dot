@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
+ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
+ln -sf "$PWD/.profile" "$HOME/.profile"
+
+for i in vim tmux x11 dunst; do
+    cd $i && ./setup
+    cd -
+done

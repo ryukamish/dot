@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# this is shamlessly taken from https://github.com/rwxrob/dot
+
+check=$(which lynx)
+
+[ -z $check ] && return || exec lynx "duckduckgo.com/lite?q=$*"

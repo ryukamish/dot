@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -z "$(which vim)" -o -z "$(which vimtutor)" ] && echo "\e[1;31mWarning\e[0m
+Need to have the full version of vim."
+
+ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
+mkdir "$HOME/.vim" "$HOME/.vim/autoload"
+ln -sf "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"

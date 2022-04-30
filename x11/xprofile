@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This file runs when a DM logs you into a graphical session.
+
+setbg &         # set the background with setbg script
+remaps &
+
+autostart="xcompmgr dunst unclutter"
+
+for program in $autostart; do
+    pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
