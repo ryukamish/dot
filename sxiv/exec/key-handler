@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# while using commands use the full path because it is a security feature
+
+fullpath="$(pwd)/$file"
+
+while read file
+do
+    case "$1" in
+        "d")
+            /usr/bin/rm "$file" && notify-send "sxiv" "$file deleted." ;;
+    esac
+done
