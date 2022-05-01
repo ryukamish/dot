@@ -5,15 +5,16 @@ Many of the configs are inspired from [rwxrob](https://github.com/rwxrob) and [L
 - Directory structure
 
 ```
-`$HOME`
-    |
-    -- repos
-        |
-        -- github.com
-            |
-            -- ryukamish
-                |
-                -- dot
+.
+├── bash
+├── dunst
+├── scripts
+├── sxiv
+│   └── exec
+├── tmux
+├── vim
+└── x11
+
 ```
 
 ## Legal
