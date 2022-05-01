@@ -79,9 +79,9 @@ shopt -s histappend
 
 __ps1() {
   local P='$' dir="${PWD##*/}" B countme short long double\
-    r='\[\e[31m\]' g='\[\e[30m\]' h='\[\e[34m\]' \
-    u='\[\e[33m\]' p='\[\e[34m\]' w='\[\e[35m\]' \
-    b='\[\e[36m\]' x='\[\e[0m\]'
+    red='\[\033[31m\]' black='\[\033[30m\]' blue='\[\033[34m\]' \
+    yellow='\[\033[33m\]' purple='\[\033[35m\]' \
+    cyan='\[\033[36m\]' r='\[\033[0m\]' dim='\[\033[2;37m\]'
 
   [[ $EUID == 0 ]] && P='#' && u=$r && p=$u # root
   [[ $PWD = / ]] && dir=/
@@ -91,9 +91,9 @@ __ps1() {
   [[ $dir = "$B" ]] && B=.
 
   [[ $B = master || $B = main ]] && b="$r"
-  [[ -n "$B" ]] && B="\e[2;37m:\e[0m\e[1;31m$B\e[0m"
+  [[ -n "$B" ]] && B="$purple:$r$red$B$r"
 
-  prompt="\e[2;37m\W\e[0m$B \$ "
+  prompt="$dim\W$r$B \$ "
 PS1="$prompt"
 }
 
