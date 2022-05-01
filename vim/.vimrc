@@ -78,7 +78,7 @@ filetype plugin on
 set background=dark
 
 " persistent colorscheme
-colorscheme 256_noir
+colorscheme paramount
 
 " Stop auto commenting on the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
