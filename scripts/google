@@ -1,5 +1,8 @@
 #!/bin/sh
 
-[ -z $(which lynx) ] && return
+#vars
+check="$(which lynx)"
+url="https://google.com/search?q=$*"
 
-exec lynx "https://google.com/search?q=$*"
+[ -z $check ] && return 1
+exec lynx $url
