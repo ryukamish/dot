@@ -83,6 +83,11 @@ colorscheme paramount
 " Stop auto commenting on the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Vim does not support system clipboard support
+" This does not work with text going out of vim to system clipboard
+vnoremap <C-c> y: call system("xclip -i", getreg("\""))<CR>
+nnoremap <C-v> :r !xclip -o <CR>
+
 " ======================= Plugins =======================
 
 if filereadable(expand("~/.vim/autoload/plug.vim"))
