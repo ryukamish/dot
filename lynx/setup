@@ -1,0 +1,7 @@
+#!/bin/sh
+
+check=$(cd $HOME/.config/lynx || echo "Lynx directory does not exist." || return 1)
+
+if [ -r $check ]; then
+    ln -sf "$PWD/lynx.cfg" "$HOME/.config/lynx/lynx.cfg" && echo "[*] The symlink was made successfully!" && notify-send "Hey, listen..." "[*] The symlink was made successfully."
+fi
