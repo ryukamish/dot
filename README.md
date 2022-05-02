@@ -8,6 +8,7 @@ Many of the configs are inspired from [rwxrob](https://github.com/rwxrob) and [L
 .
 ├── bash
 ├── dunst
+├── lynx
 ├── scripts
 ├── sxiv
 │   └── exec
