@@ -22,6 +22,7 @@ export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$USER"
+export LYNX_CFG="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.cfg"
 export HELP_BROWSER=lynx
 export DESKTOP="$HOME/"
 export DOCUMENTS="$HOME/dox"
