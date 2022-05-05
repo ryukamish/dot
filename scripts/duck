@@ -2,5 +2,6 @@
 
 # this is shamlessly taken from https://github.com/rwxrob/dot
 
+# FIXME: do something about it searching for single words rather than a string of text
 url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
 exec lynx $url

@@ -2,6 +2,7 @@
 
 #vars
 check="$(which lynx)"
+# FIXME: same thing searching for single words rather than string of characters
 url="https://google.com/search?q=$*"
 
 [ -z $check ] && return 1
