@@ -1,9 +1,0 @@
-.
-├── bash
-├── dunst
-├── scripts
-├── sxiv
-│   └── exec
-├── tmux
-├── vim
-└── x11
