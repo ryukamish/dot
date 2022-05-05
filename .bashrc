@@ -122,7 +122,7 @@ alias c='clear'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
-alias gp='git push origin main'
+alias gp='git push origin $(git branch --show-current)'
 # Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
