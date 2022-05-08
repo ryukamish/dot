@@ -4,6 +4,6 @@
 Need to have the full version of vim."
 
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-[ -z "$HOME/.vim" ] && mkdir "$HOME/.vim" "$HOME/.vim/autoload" "$HOME/.vim/colors"
+[ -z "$HOME/.vim" ] && mkdir "$HOME/.vim/{autoload,colors}"
 ln -sf "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
 ln -sf "$PWD/.vim/colors/paramount.vim" "$HOME/.vim/colors/paramount.vim"
