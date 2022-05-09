@@ -1,0 +1,10 @@
+#!/bin/sh
+
+check=$(which dunst)
+
+[ -z "$DISPLAY" ] && [ -z $check ] && return;
+[ -d $HOME/.config/dunst ] && mkdir -p $HOME/.config/dunst
+
+ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc"
+ln -sf "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
+ln -sf "$PWD/critical.png" "$HOME/.config/dunst/critical.png"
