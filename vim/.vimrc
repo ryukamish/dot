@@ -34,6 +34,8 @@ if v:version >= 800
     set nofoldenable
 endif
 
+" mark trailing spaces as errors
+match IncSearch '\s\+$'
 " enough for line numbers + gutter within 80 standard
 set textwidth=72
 "set colorcolumn=73
@@ -102,7 +104,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
 " NERDTree keybindings
 nnoremap <leader>n :NERDTreeToggle <CR>
-    
+
 " ======================== Keybindings =======================
 
 " remapping space for : character
@@ -121,6 +123,9 @@ map <leader>t :terminal<CR>
 
 " set paste
 nmap <leader>p :set paste<CR>i
+
+" check file in shellcheck
+map <leader>c :!clear && shellcheck -x %<CR>
 
 " ======================= Status Bar ===========================
 
@@ -141,5 +146,9 @@ set laststatus=2
 " save file as sudo on files that requires root permission
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-" start at last place you were editing
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
+ 	autocmd BufWritePre * let currPos = getpos(".")
+	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufWritePre * %s/\n\+\%$//e
+	autocmd BufWritePre *.[ch] %s/\%$/\r/e
+  	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
