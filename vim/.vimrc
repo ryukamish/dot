@@ -8,19 +8,54 @@ set nocompatible    " Disable compatibility with vi which causes unexpected issu
 
 " ==================== Vi Compatible (~/.exrc) ====================
 
-set autoindent                  " automatically indent new lines
-set autowrite                   " automatically write files when changing when multiple files open
-set number                      " activate line numbers
-" set nonumber                  " deactivate line numbers
-set nohlsearch                  " No highlight on words searched
-set smartcase                   " Search in a smart way (madeup comment)
-set showmode                    " Show which mode am in right now
-set showcmd                     " Show partial command in the last line of the screen
-set path+=**                    " To open and jump to another buffer without closing vim
-set wildmenu                    " enable auto completion menu after pressing TAB
-set wildmode=longest,full       " make wildmenu behave similar to Bash completion
+" automatically indent new lines
+set autoindent
 
-" ==================================================================
+" automatically write files when changing when multiple files open
+set autowrite
+
+" no highlight when searching for text
+set nohlsearch
+set smartcase                   " Search in a smart way (madeup comment)
+
+" show command and insert mode
+set showmode
+
+set showcmd                     " Show partial command in the last line of the screen
+
+" turn col and row position on in bottom right
+set ruler " see ruf for formatting
+
+" replace tabs with spaces automatically
+set expandtab
+
+" tab stop
+set tabstop=2
+
+" To open and jump to another buffer without closing vim
+set path+=**
+
+" enable auto completion menu after pressing TAB
+set wildmenu
+
+" disable relative line numbers, remove no to sample it
+set norelativenumber
+
+" turn on default spell checking
+" set spell
+
+" disable spellcapcheck
+set spc=
+
+"########################################################################
+set t_vb=
+
+let mapleader=","
+
+set softtabstop=2
+
+" mostly used with >> and <<
+set shiftwidth=2
 
 if v:version >= 800
     " stop vim from silently messing with files that it shouldn't
@@ -36,6 +71,7 @@ endif
 
 " mark trailing spaces as errors
 match IncSearch '\s\+$'
+
 " enough for line numbers + gutter within 80 standard
 set textwidth=72
 "set colorcolumn=73
@@ -80,7 +116,7 @@ filetype plugin on
 set background=dark
 
 " persistent colorscheme
-colorscheme paramount
+"colorscheme paramount
 
 " Stop auto commenting on the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -94,16 +130,18 @@ nnoremap <C-v> :r !xclip -o <CR>
 
 if filereadable(expand("~/.vim/autoload/plug.vim"))
 
-    " github.com/junegunn/vim-plug
-
     call plugin#begin('~/.vim/plugins')
     Plug 'preservim/nerdtree'
     Plug 'ap/vim-css-color'
     Plug 'tpope/vim-surround'
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'rwxrob/vim-pandoc-syntax-simple'
     call plug#end()
 
 " NERDTree keybindings
 nnoremap <leader>n :NERDTreeToggle <CR>
+
+endif
 
 " ======================== Keybindings =======================
 
@@ -151,4 +189,4 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritePre * %s/\n\+\%$//e
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
-  	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+ 	autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
