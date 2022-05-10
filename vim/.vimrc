@@ -130,7 +130,7 @@ nnoremap <C-v> :r !xclip -o <CR>
 
 if filereadable(expand("~/.vim/autoload/plug.vim"))
 
-    call plugin#begin('~/.vim/plugins')
+    call plug#begin('~/.vim/plugins')
     Plug 'preservim/nerdtree'
     Plug 'ap/vim-css-color'
     Plug 'tpope/vim-surround'
