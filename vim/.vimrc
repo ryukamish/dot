@@ -121,11 +121,6 @@ set background=dark
 " Stop auto commenting on the next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Vim does not support system clipboard support
-" This does not work with text going out of vim to system clipboard
-vnoremap <C-c> y: call system("xclip -i", getreg("\""))<CR>
-nnoremap <C-v> :r !xclip -o <CR>
-
 " Set the bottom right status file name and relative path to the file and all that shit
 set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
@@ -157,8 +152,14 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Vim does not support system clipboard support
+" This does not work with text going out of vim to system clipboard
+"vnoremap <C-c> y: call system("xclip -i", getreg("\""))<CR>
+"nnoremap <C-v> :r !xclip -o <CR>
+
 " more keybindings what's more better than this
 map <leader>s :%s//g<Left><Left>
+
 " open terminal in vim
 map <leader>t :terminal<CR>
 
@@ -167,6 +168,24 @@ nmap <leader>p :set paste<CR>i
 
 " check file in shellcheck
 map <leader>c :!clear && shellcheck -x %<CR>
+
+" Source the file
+nnoremap <leader>sf :source %<cr>
+
+" Markdown heading keybinding
+function! UnderlineHeading(level)
+  if a:level == 1
+    normal! yypVr=
+  elseif a:level == 2
+    normal! yypVr-
+  else
+    normal! I###<space>
+  endif
+endfunction
+
+nnoremap <leader>u1 :call UnderlineHeading(1)<cr>
+nnoremap <leader>u2 :call UnderlineHeading(2)<cr>
+nnoremap <leader>u3 :call UnderlineHeading(3)<cr>
 
 " ===============================================================
 
