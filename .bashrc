@@ -22,7 +22,6 @@ export USER="${USER:-$(whoami)}"
 export GITUSER="$USER"
 export REPOS="$HOME/repos"
 export GHREPOS="$REPOS/github.com/$USER"
-export PATH="$PATH:$HOME/.local/bin"
 export LYNX_CFG="${XDG_CONFIG_HOME:-$HOME/.config}/lynx/lynx.cfg"
 export HELP_BROWSER=lynx
 export DESKTOP="$HOME/"
@@ -47,8 +46,14 @@ export LESS_TERMCAP_so="[34m" # blue
 export LESS_TERMCAP_ue="" # "0m"
 export LESS_TERMCAP_us="[4m"  # underline
 
-# ================================== home directory cleanup ===========================================
+# =========================== cd path ===================================
 
+export CDPATH=".:$GHREPOS:$REPOS:$HOME"
+
+# ================== home directory cleanup & paths export ==========================
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/scripts"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
