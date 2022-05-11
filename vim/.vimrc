@@ -126,6 +126,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 vnoremap <C-c> y: call system("xclip -i", getreg("\""))<CR>
 nnoremap <C-v> :r !xclip -o <CR>
 
+" Set the bottom right status file name and relative path to the file and all that shit
+set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+
 " ======================= Plugins =======================
 
 if filereadable(expand("~/.vim/autoload/plug.vim"))
