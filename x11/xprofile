@@ -5,7 +5,7 @@
 setbg &         # set the background with setbg script
 #remaps &
 
-autostart="xcompmgr dunst unclutter slstatus"
+autostart="dunst unclutter xcompmgr slstatus"
 
 for program in $autostart; do
     pidof -s "$program" || setsid -f "$program"
