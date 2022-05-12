@@ -172,6 +172,9 @@ map <leader>c :!clear && shellcheck -x %<CR>
 " Source the file
 nnoremap <leader>sf :source %<cr>
 
+" Set filetype for custom files
+autocmd BufNewFile,BufRead README set ft=markdown
+
 " Markdown heading keybinding
 function! UnderlineHeading(level)
   if a:level == 1
