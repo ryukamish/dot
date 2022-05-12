@@ -150,4 +150,6 @@ _have vim && alias vi=vim
 
 # =================================== TMUX on every new startup shell ======================
 
+# TODO: Do something about the below line of tmux to auto start
+# everytime which is not working
 #[[ $- == *i* ]] && [[ -z "${TMUX}" ]] && { tmux attach || exec tmux new-session && return ; }
