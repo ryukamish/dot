@@ -4,7 +4,7 @@ This directory only contains the fonts I want to be portable and to use in any s
 
 ## The Mono Spaced Font Used
 
-The font that this directory has is `IBM Plex Mono` font. It is the font I am currently using and will use for a while now.
+The font that this directory has is `Hack` font. It is the font I am currently using and will use for a while now.
 
 ## The Sans Fonts Used
 
