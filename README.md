@@ -9,6 +9,10 @@ Many of the configuration are inspired from [rwxrob](https://github.com/rwxrob) 
 .
 ├── bash
 ├── dunst
+├── fonts
+│   ├── IBM-Plex-Mono
+│   ├── IBM-Plex-Sans
+│   └── IBM-Plex-Serif
 ├── lynx
 ├── scripts
 ├── sxiv
@@ -16,7 +20,6 @@ Many of the configuration are inspired from [rwxrob](https://github.com/rwxrob) 
 ├── tmux
 ├── vim
 └── x11
-
 ```
 
 New Found Knowledge
