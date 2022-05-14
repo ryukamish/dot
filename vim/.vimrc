@@ -73,7 +73,7 @@ endif
 match IncSearch '\s\+$'
 
 " enough for line numbers + gutter within 80 standard
-set textwidth=72
+"set textwidth=72
 "set colorcolumn=73
 
 " risky but cleaner
