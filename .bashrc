@@ -100,7 +100,7 @@ __ps1() {
   [[ $B = master || $B = main ]] && b="$r"
   [[ -n "$B" ]] && B="$purple:$r$red$B$r"
 
-  prompt="$dim\W$r$B \$ "
+  prompt="$dim\W$r$B $P "
 PS1="$prompt"
 }
 
@@ -115,7 +115,7 @@ _have xset && test -n "$DISPLAY" && \
 
 # ================================== bash completion ======================================
 
-_source_if "$PWD/bash/bash_completion"
+_source_if "$GHREPOS/dot/bash/bash_completion"
 
 # =================================== aliases ==============================================
 
