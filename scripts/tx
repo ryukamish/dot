@@ -1,3 +1,2 @@
 #!/bin/sh
-file="$1"
-touch $file && chmod +x $file
+touch "$1" && chmod +x "$1"

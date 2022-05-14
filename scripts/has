@@ -1,0 +1,12 @@
+#!/bin/sh
+red='\[\e[31m\]'
+reset='\[\e[0m\]'
+
+cmd=$(type -p "$1")
+
+if [ -z $cmd ]; then
+  echo "Warning!
+Looks like the package is not installed!"
+else
+  echo "The package is installed!"
+fi
