@@ -1,2 +1,2 @@
 #!/bin/sh
-tmux attach || exec tmux new-session && return;
+[[ $- == *i* ]] && tmux attach || exec tmux new-session
