@@ -123,7 +123,6 @@ unalias -a
 # ls commands
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lah'
-alias c='clear'
 # git aliases
 alias gs='git status'
 alias ga='git add'
