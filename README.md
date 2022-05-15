@@ -28,6 +28,13 @@ New Found Knowledge
 I found a new knowledge today (dated May 09 2022) that bash can debug a script without running it by giving the flags `-x` to bash and it will give a plus sign if the script runs fine and errors if not.
 Also + and - to the `x` flag will evaluate a block of the script with negative being first and plus being later.
 
+
+TODO
+----
+
+1. Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
+1. Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
+
 Legal
 -----
 
