@@ -1,3 +1,5 @@
 #!/bin/sh
-cmd=$(command -v "$1")
-test -n "$cmd" && exec vim "$cmd"
+cmd=$(type -p vim)
+file=$(type -p "$1")
+
+$cmd $file

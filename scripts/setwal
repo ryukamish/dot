@@ -1,23 +1,31 @@
 #!/bin/sh
 
-# check dependencies
+# fuction to check dependencies
 dep_ck() {
   for pr; do
     type -ap $pr >/dev/null 2>&1 || echo -e "command $pr not found, install: $pr" 1
   done
 }
-dep_ck "sxiv" "xwallpaper"
 
 # choose a wallpaper from the desired directory
-path=$($HOME/pix/wall)
-wal_set() {
-  cmd=$(ls -c $path || echo "wallpaper directory does not exist.")
+wall_set() {
+  cmd=$(find $HOME/pix/wall -type f || echo "wallpaper directory does not exist.")
   sxiv -fto $cmd
 }
-walset=$(wal_set)
 
-# set chosen wallpaper
-xwallpaper --zoom $walset && wal -i $walset && echo "wallpaper and colorscheme changed" && notify-send "wallpaper set and colorscheme set..."
+# if dwm is your window manager then it uses `sed` to delete the last line of the colorschem file wal generates
+make_prep() {
+  wal -c && wal -i $wallset >/dev/null
+  sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+}
 
-# for dwm
-dep_ck "dwm"
+# now recompile dwm and dmenu and apply the new colorscheme
+_make() {
+  # make dwm and dmenu
+  cd $HOME/.local/src/dwm && sudo make clean install 2>/dev/null
+  cd $HOME/.local/src/dmenu && sudo make clean install 2>/dev/null
+}
+
+dep_ck "sxiv" "xwallpaper" "wal"
+wallset=$(wall_set) && xwallpaper --zoom $wallset && echo "wallpaper changed..." && notify-send "wallpaper set..."
+make_prep && _make && echo "dwm and dmenu recompiled..." && notify-send "dwm and dmenu recompiled..."
