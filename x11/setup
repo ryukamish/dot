@@ -2,4 +2,5 @@
 
 mkdir $HOME/.config/x11
 ln -sf "$PWD/xprofile" "$HOME/.config/x11/xprofile"
+ln -sf "$PWD/xprofile" "$HOME/.xprofile"
 ln -sf "$PWD/xinitrc" "$HOME/.config/x11/xinitrc"
