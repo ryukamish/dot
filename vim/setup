@@ -4,8 +4,8 @@
 Need to have the full version of vim."
 
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-dir=$(type -p $HOME/.vim/autoload)
-[ -z $dir ] && mkdir -p $HOME/.vim/autoload && mkdir -p $HOME/.vim/colors
+mkdir -p $HOME/.vim/autoload
+mkdir -p $HOME/.vim/colors
 # for some reason symlinking plug.vim does not work or I may not be knowing about it
 cp "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
 ln -sf "$PWD/.vim/colors/paramount.vim" "$HOME/.vim/colors/paramount.vim"
