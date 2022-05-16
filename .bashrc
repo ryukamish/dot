@@ -53,7 +53,7 @@ export CDPATH=".:$GHREPOS:$REPOS:$HOME"
 # ================== home directory cleanup & paths export ==========================
 
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/scripts"
+export PATH="$PATH:$GHREPOS/dot/scripts"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
