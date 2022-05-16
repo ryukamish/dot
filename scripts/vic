@@ -1,5 +1,3 @@
 #!/bin/sh
-cmd=$(type -p vim)
-file=$(type -p "$1")
-
-$cmd $file
+cmd=$(which $1)
+command -v vim && exec vim $cmd
