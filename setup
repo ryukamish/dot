@@ -7,6 +7,10 @@ ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.profile" "$HOME/.profile"
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
+# for user custom directory path
+mkdir $HOME/.config
+ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
+
 program="vim tmux x11 dunst lynx gh"
 for i in $program; do
     cd $i && ./setup
