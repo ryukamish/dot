@@ -113,9 +113,10 @@ _have setxkbmap && test -n "$DISPLAY" && \
 _have xset && test -n "$DISPLAY" && \
 	xset r rate 200 40
 
-# ================================== bash completion ======================================
+# ================================== bash & gh completion ======================================
 
 _source_if "$GHREPOS/dot/bash/bash_completion"
+_source_if "$GHREPOS/dot/gh/gh-completion"
 
 # =================================== aliases ==============================================
 
