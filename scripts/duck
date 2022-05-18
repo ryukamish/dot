@@ -2,6 +2,6 @@
 
 # this is shamlessly taken from https://github.com/rwxrob/dot
 
-url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$(urlencode)"
+url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$(urlencode $*)"
 #url="https://duckduckgo.com?q=$*"
 exec lynx $url
