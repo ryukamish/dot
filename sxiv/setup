@@ -1,0 +1,5 @@
+#!/bin/sh
+type -p sxiv 2>/dev/stderr || echo '[!] The program sxiv is not installed.'
+mkdir -p $HOME/.config/sxiv/exec 2>/dev/null
+ln -sf "$PWD/exec/image-info" "$HOME/.config/sxiv/exec/image-info"
+ln -sf "$PWD/exec/key-handler" "$HOME/.config/sxiv/exec/key-handler"

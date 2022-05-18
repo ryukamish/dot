@@ -1,4 +1,4 @@
 #!/bin/sh
 mkdir -p "$HOME/.config/gh" 2>/dev/null
-ln -sf "$PWD/config.yml" "$HOME/.config/gh/config.yml"
+ln -sf "$PWD/config.yml" "$HOME/.config/gh/config.yml" && echo '[*] Symlink successful.(github-cli)'
 echo 'Might as well do gh auth --with-token <token>'
