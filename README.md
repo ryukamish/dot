@@ -25,8 +25,11 @@ Many of the configuration are inspired from [rwxrob](https://github.com/rwxrob) 
 New Found Knowledge
 -------------------
 
-I found a new knowledge today (dated May 09 2022) that bash can debug a script without running it by giving the flags `-x` to bash and it will give a plus sign if the script runs fine and errors if not.
-Also + and - to the `x` flag will evaluate a block of the script with negative being first and plus being later.
+(dated May 09 2022) I found a new knowledge today that bash can debug a script without running it by giving the flags `-x` to bash and it will give a plus sign if the script runs fine and errors if not.
+- The + and - to the `x` flag will evaluate a block of the script with negative being first and plus being later.
+
+(dated May 18 2022) So the problem was that I wanted to know if my bash script is not giving any errors. And I found out about the `-n` flag which is used to check the syntax validity of the bash script. And this will give me a heads up which is great.
+- Run scripts with the `-n` flag to check syntax validity.
 
 
 TODO
