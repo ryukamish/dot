@@ -7,7 +7,7 @@ ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 ln -sf "$PWD/.profile" "$HOME/.profile"
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
-program="vim tmux x11 dunst"
+program="vim tmux x11 dunst lynx gh"
 for i in $program; do
     cd $i && ./setup
     cd -
