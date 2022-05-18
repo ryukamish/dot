@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p $HOME/.config/fontconfig >/dev/null
+ln -sf "$PWD/fonts.conf" "$HOME/.config/fontconfig/fonts.conf" && echo '[*] Symlink successful.(fonts.conf)'
