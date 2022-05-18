@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "Choosing random wallpaper..." ;\
     wall=$(find $HOME/pix/wall -type f | shuf -n 1)

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 red='\[\e[31m\]'
 reset='\[\e[0m\]'
 
