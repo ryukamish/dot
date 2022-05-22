@@ -2,7 +2,7 @@
 
 # This file runs when a DM logs you into a graphical session.
 
-setbg &         # set the background with setbg script
+#setbg &         # set the background with setbg script
 #remaps &
 
 autostart="dunst unclutter xcompmgr slstatus"
