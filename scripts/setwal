@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This is more of a choose and set wallpaper type of script which requires few programs
+
 # fuction to check dependencies
 dep_ck() {
   for pr; do
