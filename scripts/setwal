@@ -28,4 +28,3 @@ _make() {
 
 dep_ck "sxiv" "xwallpaper" "wal"
 wallset=$(wall_set) && xwallpaper --zoom $wallset && echo "wallpaper changed..." && notify-send "wallpaper set..."
-make_prep && _make && echo "dwm and dmenu recompiled..." && notify-send "dwm and dmenu recompiled..."
