@@ -9,12 +9,3 @@ echo "Setting random wallpaper..." ;\
 echo "Generating pywal colorschemes..."
 wal -c && wal -i $wall >/dev/null
 sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
-
-echo "Recompiling dmenu..." ; \
-    (cd $HOME/.local/src/dmenu && sudo make clean install&>/dev/null) && \
-    notify-send -u critical "Dmenu recompiled..."
-
-echo "Recompiling dwm..." ; (cd $HOME/.local/src/dwm && sudo make clean install>/dev/null) \
-    && notify-send -u critical "Restart dwm..."
-
-echo "Restart dwm for the new look"

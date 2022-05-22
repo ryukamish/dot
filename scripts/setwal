@@ -16,7 +16,6 @@ wall_set() {
 # if dwm is your window manager then it uses `sed` to delete the last line of the colorschem file wal generates
 make_prep() {
   wal -c && wal -i $wallset >/dev/null
-  sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
 }
 
 # now recompile dwm and dmenu and apply the new colorscheme
@@ -28,3 +27,4 @@ _make() {
 
 dep_ck "sxiv" "xwallpaper" "wal"
 wallset=$(wall_set) && xwallpaper --zoom $wallset && echo "wallpaper changed..." && notify-send "wallpaper set..."
+make_prep
