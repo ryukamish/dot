@@ -8,4 +8,4 @@ echo "Setting random wallpaper..." ;\
 
 echo "Generating pywal colorschemes..."
 wal -c && wal -i $wall >/dev/null
-sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+#sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
