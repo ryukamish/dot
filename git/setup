@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p $HOME/.config/git 2>/dev/null
+ln -sf "$PWD/config" "$HOME/.config/git/config"
+ln -sf "$PWD/ignore" "$HOME/.config/git/ignore"
