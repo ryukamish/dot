@@ -1,0 +1,42 @@
+#!/bin/sh
+
+set -e
+set -u
+
+test -n dmenu 2>/dev/stderr || echo '[!] Dmenu is not installed.'
+# TODO: Implement dmenu and rofi choice
+#type -p rofi || echo '[!] Rofi is not installed.'
+
+choice=$(echo 'shutdown\nreboot\nsleep\nsuspend' | dmenu -i -l 20 -p 'Run: ')
+case $choice in
+  'shutdown')
+    cmd=$(echo "yes\nno" | dmenu -i -l 4 -p "Are you sure?[y/n]")
+    if [ "$cmd" = "yes" ]; then
+      systemctl poweroff
+    else
+      exit 1
+    fi
+    ;;
+  'reboot')
+    cmd=$(echo "yes\nno" | dmenu -i -l 4 -p "Are you sure?[y/n]")
+    if [ "$cmd" = "yes" ]; then
+      systemctl reboot
+    else
+      exit 1
+    fi
+    ;;
+  'sleep')
+    #TODO: See this through
+    ;;
+  'suspend')
+    cmd=$(echo "yes\nno" | dmenu -i -l 4 -p "Are you sure?[y/n]")
+    if [ "$cmd" = "yes" ]; then
+      systemctl suspend
+    else
+      exit 1
+    fi
+    ;;
+  *)
+    exit 1
+    ;;
+esac
