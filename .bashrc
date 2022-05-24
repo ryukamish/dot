@@ -33,9 +33,8 @@ export PRIVATE="$HOME/private"
 export PICTURES="$HOME/pix"
 export MUSIC="$HOME/music"
 export VIDEOS="$HOME/vids"
-export EDITOR=vi
-export VISUAL=vi
-export EDITOR_PREFIX=vi
+export VISUAL=vim
+export EDITOR_PREFIX=vim
 export LC_COLLATE=C
 export CFLAGS="-Wall -Wextra -Werror -O0 -g -fsanitize=address -fno-omit-frame-pointer -finstrument-functions"
 export LESS_TERMCAP_mb="[35m" # magenta
