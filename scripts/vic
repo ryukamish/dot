@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 cmd=$(which $1)
-command -v vim && exec vim $cmd
+command -v vim &>/dev/null && exec vim $cmd
