@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-[[ $- == *i* ]] && tmux attach || exec tmux new-session

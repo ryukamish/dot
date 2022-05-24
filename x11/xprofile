@@ -3,9 +3,8 @@
 # This file runs when a DM logs you into a graphical session.
 
 setbg &         # set the background with setbg script
-#remaps &
 
-autostart="dunst unclutter xcompmgr slstatus"
+autostart="dunst unclutter xcompmgr slstatus sxhkd"
 
 for program in $autostart; do
     pidof -s "$program" || setsid -f "$program"

@@ -8,10 +8,10 @@ ln -sf "$PWD/.profile" "$HOME/.profile"
 ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 
 # for user custom directory path
-mkdir $HOME/.config
+[ -r $HOME/.config ] || mkdir $HOME/.config
 ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && echo '[*] Symlink successful.'
 
-program="vim tmux x11 dunst lynx gh sxiv"
+program="vim tmux x11 dunst lynx gh git sxiv"
 for i in $program; do
     cd $i && ./setup
     cd -
