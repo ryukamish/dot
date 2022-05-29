@@ -6,5 +6,5 @@ check=$(which dunst)
 mkdir -p $HOME/.config/dunst || echo 'Directory already exists'
 
 ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc"
-ln -sf "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
-ln -sf "$PWD/critical.png" "$HOME/.config/dunst/critical.png"
+cp "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
+cp "$PWD/critical.png" "$HOME/.config/dunst/critical.png"
