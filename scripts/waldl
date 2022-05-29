@@ -16,7 +16,7 @@ version="0.0.1"
 ####################
 
 # the dir where wallpapers are stored
-walldir="$HOME/.local/share/wallhaven"
+walldir="$HOME/pix/wall"
 # the dir used to cache thumbnails
 cachedir="$HOME/.cache/wallhaven"
 # sxiv options
@@ -112,7 +112,7 @@ sh_info "getting data..."
 get_results "$query"
 
 # check if data file is empty, if so then exit
-[ -s "$datafile" ] || sh_info "no images found" 1 
+[ -s "$datafile" ] || sh_info "no images found" 1
 
 ############################
 ## downloading thumbnails ##

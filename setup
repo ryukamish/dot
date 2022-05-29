@@ -11,7 +11,7 @@ ln -sf "$PWD/.profile" "$HOME/.bash_profile"
 [ -r $HOME/.config ] || mkdir $HOME/.config
 ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && echo '[*] Symlink successful.'
 
-program="vim tmux x11 dunst lynx gh git sxiv"
+program="vim tmux x11 dunst lynx gh git sxiv fontconfig"
 for i in $program; do
     cd $i && ./setup
     cd -
