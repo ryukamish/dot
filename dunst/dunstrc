@@ -439,4 +439,4 @@
 
 #[play_sound]
 #   summary = "*"
-#   scipt = "path/to/file"
+#   script = "path/to/file"

@@ -1,0 +1,23 @@
+Dunst Configuration
+===================
+
+The directory contains a [`dunstrc`](./dunstrc) file which contains the
+configuration of `dunst` program.
+
+It also contains two png file which are used as icons for
+    - normal notification
+    - urgent notification
+
+The [`setup`](./setup) file is script for automation (which makes lyf
+easy).
+
+Want sound with notification?
+-----------------------------
+
+There section `[play_sound]` at the last of [`dunstrc`](./dunstrc).
+
+What you should do for sound to play correctly:
+
+    1. Make sure the audio file does not contains any image in metadata
+    1. Only absolute path to the script works
+    1. And, yes it could be a script or an audio file
