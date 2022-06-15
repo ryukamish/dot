@@ -2,7 +2,7 @@
 
 check=$(which dunst)
 
-[ -z "$DISPLAY" ] && [ -z $check ] && return;
+[ -z "$DISPLAY" ] && [ -z $check ] || echo '[!] Dunst is not installed or graphical display not available,install: dunst'
 mkdir -p $HOME/.config/dunst || echo 'Directory already exists'
 
 ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc"
