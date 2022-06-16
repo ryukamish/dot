@@ -174,8 +174,6 @@ nnoremap <leader>sf :source %<cr>
 
 " Set filetype for custom files
 autocmd BufNewFile,BufRead README set ft=markdown
-autocmd BufNewFile,BufRead README set textwidth=72
-autocmd BufNewFile,BufRead README.md set textwidth=72
 
 " Markdown heading keybinding
 function! UnderlineHeading(level)
