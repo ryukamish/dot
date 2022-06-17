@@ -35,9 +35,10 @@ New Found Knowledge
 TODO
 ----
 
-1. Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
-1. Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
-1. Add a `README` to the new directories and explain about them.
+(DONE) - Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
+(DONE) - Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
+(DONE) - Add a `README` to the new directories and explain about them.
+- Remove the need to run credential store cache commnad and implement to the [config](./git/config) file.
 
 Legal
 -----

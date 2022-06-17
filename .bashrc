@@ -129,7 +129,7 @@ alias ll='ls -lah'
 # git aliases
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gp='git push origin $(git branch --show-current)'
 # Navigation
 alias ..='cd ..'
