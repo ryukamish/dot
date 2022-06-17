@@ -97,9 +97,9 @@ __ps1() {
   [[ $dir = "$B" ]] && B=.
 
   [[ $B = master || $B = main ]] && b="$r"
-  [[ -n "$B" ]] && B="$purple:$r$red$B$r"
+  [[ -n "$B" ]] && B="$purple:$r$red( $B )$r"
 
-  prompt="$dim\W$r$B $P "
+  prompt="[$dim\w$r]$B \n$blue[\!]$r $P "
 PS1="$prompt"
 }
 
