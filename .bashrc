@@ -97,10 +97,13 @@ __ps1() {
   [[ $dir = "$B" ]] && B=.
 
   [[ $B = master || $B = main ]] && b="$r"
-  [[ -n "$B" ]] && B="$purple:$r$red( $B )$r"
+  [[ -n "$B" ]] && B="$purple:$r$red$B$r"
 
-  prompt="[$dim\w$r]$B \n$blue[\!]$r $P "
-PS1="$prompt"
+  #prompt="[$dim\w$r]$B \n$blue[\!]$r $P "
+
+  # A simple one liner prompt with only directory information and git status
+  prompt="$dim\W$r$B $P "
+    PS1="$prompt"
 }
 
 PROMPT_COMMAND="__ps1"
@@ -146,9 +149,3 @@ alias free='free -h'
 alias c='printf "\e[H\e[2J"'
 
 _have vim && alias vi=vim
-
-# =================================== TMUX on every new startup shell ======================
-
-# TODO: Do something about the below line of tmux to auto start
-# everytime which is not working
-#[[ $- == *i* ]] && [[ -z "${TMUX}" ]] && { tmux attach || exec tmux new-session && return ; }
