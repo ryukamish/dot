@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 cmd=$(which $1)
-command -v vim &>/dev/null && exec vim $cmd
+editor="vim"
+if [ -n $cmd ]; then
+    command -v $editor &>/dev/null && exec $editor $cmd
+else
+    echo "The required program vim is not installed,install: $editor"
+fi
