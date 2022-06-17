@@ -132,8 +132,6 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'preservim/nerdtree'
     Plug 'ap/vim-css-color'
     Plug 'tpope/vim-surround'
-    Plug 'vim-pandoc/vim-pandoc'
-    Plug 'rwxrob/vim-pandoc-syntax-simple'
     call plug#end()
 
 " NERDTree keybindings
