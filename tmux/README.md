@@ -7,7 +7,7 @@ TMUX is the most powerful multiplexer on the planet (after for few months made m
 
 ## Installation
 
-Just do the [setup][setup] thing and done. *BOOM!* we have our setup of `tmux`.
+Just do the [setup](./setup) thing and done. *BOOM!* we have our setup of `tmux`.
 
 ## Things to know
 
