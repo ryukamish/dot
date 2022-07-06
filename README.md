@@ -31,6 +31,12 @@ New Found Knowledge
 (dated May 18 2022) So the problem was that I wanted to know if my bash script is not giving any errors. And I found out about the `-n` flag which is used to check the syntax validity of the bash script. And this will give me a heads up which is great.
 - Run scripts with the `-n` flag to check syntax validity.
 
+(dated July 06 2022) While using colors on the terminal I found `printf` to be more reliable as because in very rare cases
+a Linux system could not have the command `echo`, which is not the case in any of the distros I have used so far.
+Also, found out that `printf` has another data type? something which is `%b` which is an argument as a string with `\` escapes
+interpreted, except that octal escapes are of the form \0 or \0NNN.
+- Using `%b` in `printf` will do colors in bash scripts.
+
 
 TODO
 ----
