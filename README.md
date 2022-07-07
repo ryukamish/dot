@@ -37,14 +37,20 @@ Also, found out that `printf` has another data type? something which is `%b` whi
 interpreted, except that octal escapes are of the form \0 or \0NNN.
 - Using `%b` in `printf` will do colors in bash scripts.
 
+(dated July 07 2022) While using conditional statements I found out on how to check if a file is a symlink or not with the `-L` flag.
+This flag inside a squared brackets checks if a file exists and is a symlink. Very useful with other flags such as the `-f` and `-d` flag.
+The `-f` flag check a file exists and is a regular file and the `-d` flag checks if a directory exists or not.
+- Use the `-L` flag to check if a file exist and is a symlink.
+
 
 TODO
 ----
 
-(DONE) - Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
-(DONE) - Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
-(DONE) - Add a `README` to the new directories and explain about them.
-- Remove the need to run credential store cache commnad and implement to the [config](./git/config) file.
+- (DONE) Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
+- (DONE) Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
+- (DONE) Add a `README` to the new directories and explain about them.
+- (DONE) Remove the need to run credential store cache commnad and implement to the [config](./git/config) file.
+- Update README.md file in directories.
 
 Legal
 -----
