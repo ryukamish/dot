@@ -1,4 +1,14 @@
 #!/bin/sh
-test type tmux >/dev/null 2>&1 && echo "TMUX isn't installed." && exit 1
-mkdir -p $HOME/.config/tmux || echo "The directory exists."
-ln -sf "$PWD/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+RESET="\033[0m"
+
+type tmux >/dev/null 2>&1 || \
+    printf "%b\n" "${RED}ERROR:${RESET} TMUX isn't installed." && \
+    exit 1
+[ ! -d "$HOME"/.config/tmux ] && mkdir -p "$HOME"/.config/tmux || \
+    printf "%b\n" "${RED}ERROR:${RESET} The directory exists."
+[ ! -L "$HOME"/.config/tmux/tmux.conf ] && \
+    ln -sf "$PWD/tmux.conf" "$HOME/.config/tmux/tmux.conf" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success."

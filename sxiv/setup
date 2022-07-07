@@ -1,7 +1,16 @@
 #!/bin/sh
-type -p sxiv 2>/dev/null || echo '[!] The program sxiv is not installed.'
-mkdir -p $HOME/.config/sxiv/exec 2>/dev/null
-cp "$PWD/exec/image-info" "$HOME/.config/sxiv/exec/image-info"
-cp "$PWD/exec/key-handler" "$HOME/.config/sxiv/exec/key-handler"
-chmod +x "$HOME/.config/sxiv/exec/key-handler"
-chmod +x "$HOME/.config/sxiv/exec/image-info"
+
+RED="\033[1;31m"
+RESET="\033[0m"
+
+type sxiv >/dev/null 2>&1 || printf "%b" "${RED}!${RESET} The program sxiv is not installed."
+
+[ ! -d "$HOME"/.config/sxiv/exec ] && mkdir -p "$HOME"/.config/sxiv/exec
+[ ! -f "$HOME"/.config/sxiv/exec/image-info ] && \
+    cp "$PWD/exec/image-info" "$HOME/.config/sxiv/exec/image-info"
+[ ! -f "$HOME"/.config/sxiv/exec/key-handler ] && \
+    cp "$PWD/exec/key-handler" "$HOME/.config/sxiv/exec/key-handler"
+[ ! -f "$HOME"/.config/sxiv/exec/key-handler ] &&  \
+    chmod +x "$HOME/.config/sxiv/exec/key-handler"
+[ ! -f "$HOME"/.config/sxiv/exec/key-handler ] &&  \
+    chmod +x "$HOME/.config/sxiv/exec/image-info"

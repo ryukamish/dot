@@ -1,5 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-mkdir -p $HOME/.config/git 2>/dev/null
-ln -sf "$PWD/config" "$HOME/.config/git/config"
-ln -sf "$PWD/ignore" "$HOME/.config/git/ignore"
+RED="\e[1;31m"
+GREEN="\e[1;32m"
+RESET="\e[0m"
+
+[ ! -d "$HOME"/.config/git ] && mkdir -p "$HOME"/.config/git && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Created git config directory." || \
+    printf "%b\n" "${RED}ERROR:${RESET} Git directory exists, skipping."
+
+ln -sf "$PWD/config" "$HOME/.config/git/config" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlinked git config file"
+ln -sf "$PWD/ignore" "$HOME/.config/git/ignore" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlinked git ignore file"

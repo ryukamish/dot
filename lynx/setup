@@ -1,7 +1,15 @@
 #!/bin/sh
 
-check=$(cd $HOME/.config/lynx)
-mkdir -p $HOME/.config/lynx
-if [ -r $check ]; then
-    ln -sf "$PWD/lynx.cfg" "$HOME/.config/lynx/lynx.cfg" && echo "[*] The symlink was made successfully!" && notify-send "Hey, listen..." "[*] The symlink was made successfully."
-fi
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+RESET="\033[0m"
+
+type lynx >/dev/null 2>&1 || \
+    printf "%b\n" "${RED}ERROR:${RESET} Lynx not installed, install: ${GREEN}lynx${RESET}" && \
+    exit 1
+
+[ ! -d "$HOME"/.config/lynx ] && mkdir -p "$HOME"/.config/lynx
+
+[ ! -L "$HOME"/.config/lynx/lynx.cfg ] && \
+    ln -sf "$PWD/lynx.cfg" "$HOME/.config/lynx/lynx.cfg" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success. (lynx.cfg)"

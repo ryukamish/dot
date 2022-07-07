@@ -1,6 +1,13 @@
 #!/bin/sh
 
-mkdir $HOME/.config/x11
-ln -sf "$PWD/xprofile" "$HOME/.config/x11/xprofile"
-ln -sf "$PWD/xprofile" "$HOME/.xprofile"
-ln -sf "$PWD/xinitrc" "$HOME/.config/x11/xinitrc"
+GREEN="\033[1;32m"
+RESET="\033[0m"
+
+[ ! -d "$HOME"/.config/x11 ] && mkdir "$HOME"/.config/x11
+
+[ ! -L "$HOME"/.xprofile ] && \
+    ln -sf "$PWD/xprofile" "$HOME/.xprofile" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful. (xprofile)"
+[ ! -L "$HOME"/.config/x11/xinitrc ] && \
+    ln -sf "$PWD/xinitrc" "$HOME/.config/x11/xinitrc" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful. (xinitrc)"

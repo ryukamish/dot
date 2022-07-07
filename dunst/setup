@@ -1,10 +1,17 @@
 #!/bin/sh
 
-check=$(which dunst)
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+RESET="\033[1;32m"
 
-[ -z "$DISPLAY" ] && [ -z $check ] || echo '[!] Dunst is not installed or graphical display not available,install: dunst'
-mkdir -p $HOME/.config/dunst || echo 'Directory already exists'
+check=$(type dunst)
 
-ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc"
-cp "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
-cp "$PWD/critical.png" "$HOME/.config/dunst/critical.png"
+[ -n "$DISPLAY" ] && [ -n "$check" ] || \
+    printf "%b\n" "${RED}ERROR:${RESET} Dunst is not installed or graphical display not available,install: dunst"
+[ ! -d "$HOME"/.config/dunst ] && mkdir -p "$HOME"/.config/dunst || \
+    printf "%b\n" "${RED}ERROR:${RESET} Directory already exists"
+
+[ ! -L "$HOME"/.config/dunst/dunstrc ] && ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc" \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success."
+[ ! -f "$HOME"/.config/dunst/normal.png ] && cp "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
+[ ! -f "$HOME"/.config/dunst/critical.png ] && cp "$PWD/critical.png" "$HOME/.config/dunst/critical.png"

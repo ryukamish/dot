@@ -1,11 +1,17 @@
 #!/bin/sh
 
-[ -z "$(which vim)" -o -z "$(which vimtutor)" ] && echo "\e[1;31mWarning\e[0m
-Need to have the full version of vim."
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+RESET="\033[0m"
 
-ln -sf "$PWD/.vimrc" "$HOME/.vimrc"
-mkdir -p $HOME/.vim/autoload 2>/dev/null && echo '[*] Symlink successful.(vim)'
-mkdir -p $HOME/.vim/colors 2>/dev/null && echo '[*] Symlink successful.(vim)'
+CHECK="$(which vim vimtutor)"
+[ -n "${CHECK}" ] && printf "%b\n" "${RED}ERROR:${RESET} Need to have the full version of vim." && exit 1
+
+ln -sf "$PWD/.vimrc" "$HOME/.vimrc" && printf "%b\n" "${GREEN}SUCCESS:${RESET} (vimrc)"
+[ ! -d "$HOME"/.vim/autoload ] && mkdir -p "$HOME/.vim/autoload" 2>/dev/null
+[ ! -d "$HOME"/.vim/colors ] && mkdir -p "$HOME/.vim/colors" 2>/dev/null
 # for some reason symlinking plug.vim does not work or I may not be knowing about it
-cp "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
-ln -sf "$PWD/.vim/colors/paramount.vim" "$HOME/.vim/colors/paramount.vim"
+[ ! -f "$HOME"/.vim/autoload/plug.vim ] && \
+    cp "$PWD/.vim/autoload/plug.vim" "$HOME/.vim/autoload/plug.vim"
+[ ! -L "$HOME"/.vim/colors/paramount.vim ] && \
+    ln -sf "$PWD/.vim/colors/paramount.vim" "$HOME/.vim/colors/paramount.vim"

@@ -1,18 +1,26 @@
 #!/bin/sh
 
+GREEN="\033[1;32m"
+RESET="\033[0m"
+
 set -e
 
-ln -sf "$PWD/.bashrc" "$HOME/.bashrc"
-ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
-ln -sf "$PWD/.profile" "$HOME/.profile"
-ln -sf "$PWD/.profile" "$HOME/.bash_profile"
+ln -sf "$PWD/.bashrc" "$HOME/.bashrc" && \
+    printf "%b" "${GREEN}SUCCESS:${RESET} Symlink successful! (bashrc)"
+ln -sf "$PWD/.inputrc" "$HOME/.inputrc" && \
+    printf "%b" "${GREEN}SUCCESS:${RESET} Symlink successful! (inputrc)"
+ln -sf "$PWD/.profile" "$HOME/.profile" && \
+    printf "%b" "${GREEN}SUCCESS:${RESET} Symlink successful! (profile)"
+ln -sf "$PWD/.profile" "$HOME/.bash_profile" && \
+    printf "%b" "${GREEN}SUCCESS:${RESET} Symlink successful! (bash_profile)"
 
 # for user custom directory path
-[ -r $HOME/.config ] || mkdir $HOME/.config
-ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && echo '[*] Symlink successful.'
+[ ! -d "$HOME"/.config ] && mkdir -p "$HOME"/.config
+ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && \
+    printf "%b" "${GREEN}SUCCESS:${RESET} Symlink successful."
 
 program="vim tmux x11 dunst lynx gh git sxiv fontconfig"
 for i in $program; do
-    cd $i && ./setup
+    cd "$i" && ./setup
     cd -
 done

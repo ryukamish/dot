@@ -1,3 +1,9 @@
 #!/bin/sh
-mkdir -p $HOME/.config/fontconfig >/dev/null
-ln -sf "$PWD/fonts.conf" "$HOME/.config/fontconfig/fonts.conf" && echo '[*] Symlink successful.(fonts.conf)'
+
+GREEN="\033[1;32m"
+RESET="\033[0m"
+
+[ ! -d "$HOME"/.config/fontconfig ] && mkdir -p "$HOME"/.config/fontconfig
+[ ! -L "$HOME"/.config/fontconfig/fonts.conf ] && \
+    ln -sf "$PWD/fonts.conf" "$HOME/.config/fontconfig/fonts.conf" && \
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success. (fonts.conf)"
