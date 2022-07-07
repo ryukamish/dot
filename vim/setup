@@ -5,7 +5,9 @@ GREEN="\033[1;32m"
 RESET="\033[0m"
 
 CHECK="$(which vim vimtutor)"
-[ -n "${CHECK}" ] && printf "%b\n" "${RED}ERROR:${RESET} Need to have the full version of vim." && exit 1
+[ -n "${CHECK}" ] && \
+    printf "%b\n" "${RED}ERROR:${RESET} Need to have the full version of vim, install: vim and vimtutor." \
+    && exit 1
 
 ln -sf "$PWD/.vimrc" "$HOME/.vimrc" && printf "%b\n" "${GREEN}SUCCESS:${RESET} (vimrc)"
 [ ! -d "$HOME"/.vim/autoload ] && mkdir -p "$HOME/.vim/autoload" 2>/dev/null
