@@ -4,8 +4,8 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 RESET="\033[0m"
 
-type vim vimtutor >/dev/null 2>&1 || \
-    printf "%b\n" "${RED}ERROR:${RESET} Need to have the full version of vim, install: vim and vimtutor." || \
+type vim >/dev/null 2>&1 || \
+    printf "%b\n" "${RED}ERROR:${RESET} Need to have vim, install: vim." || \
     exit 1
 
 [ ! -L "$HOME"/.vimrc ] && \

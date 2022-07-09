@@ -3,7 +3,9 @@
 RED="\033[1;31m"
 RESET="\033[0m"
 
-type sxiv >/dev/null 2>&1 || printf "%b\n" "${RED}ERROR:${RESET} The program sxiv is not installed."
+type sxiv >/dev/null 2>&1 || \
+    printf "%b\n" "${RED}ERROR:${RESET} The program sxiv is not installed." || \
+    exit 1
 
 [ ! -d "$HOME"/.config/sxiv/exec ] && mkdir -p "$HOME"/.config/sxiv/exec
 [ ! -f "$HOME"/.config/sxiv/exec/image-info ] && \

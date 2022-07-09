@@ -7,7 +7,8 @@ RESET="\033[1;32m"
 check=$(type dunst)
 
 [ -n "$DISPLAY" ] && [ -n "$check" ] || \
-    printf "%b\n" "${RED}ERROR:${RESET} Dunst is not installed or graphical display not available,install: dunst"
+    printf "%b\n" "${RED}ERROR:${RESET} Dunst is not installed or graphical display not available,install: dunst" || \
+    exit 1
 [ ! -d "$HOME"/.config/dunst ] && mkdir -p "$HOME"/.config/dunst || \
     printf "%b\n" "${RED}ERROR:${RESET} Directory already exists"
 

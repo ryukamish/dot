@@ -3,8 +3,6 @@
 GREEN="\033[1;32m"
 RESET="\033[0m"
 
-set -e
-
 [ ! -L "$HOME"/.bashrc ] && \
     ln -sf "$PWD/.bashrc" "$HOME/.bashrc" && \
     printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful! (bashrc)"
@@ -22,10 +20,11 @@ set -e
 [ ! -d "$HOME"/.config ] && mkdir -p "$HOME"/.config
 [ ! -L "$HOME"/.config/user-dirs.dirs ] && \
     ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && \
-    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful."
+    printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful. (user-dirs.dirs)"
 
-program="vim tmux x11 dunst lynx gh git sxiv fontconfig"
-for i in $program; do
+for i in vim tmux x11 dunst lynx gh git sxiv fontconfig;
+do
     cd "$i" && ./setup
-    cd -
+    cd - || printf "%b\n" "${RED}ERROR:${RESET} Directory $i does not exist" || \
+        exit 1
 done
