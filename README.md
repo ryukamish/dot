@@ -9,10 +9,13 @@ Many of the configuration are inspired from [rwxrob](https://github.com/rwxrob) 
 .
 ├── bash
 ├── dunst
+├── fontconfig
 ├── fonts
-│   ├── hack
 │   ├── IBM-Plex-Sans
-│   └── IBM-Plex-Serif
+│   ├── IBM-Plex-Serif
+│   └── hack
+├── gh
+├── git
 ├── lynx
 ├── scripts
 ├── sxiv
