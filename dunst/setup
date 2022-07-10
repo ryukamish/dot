@@ -12,7 +12,7 @@ check=$(type dunst)
 [ ! -d "$HOME"/.config/dunst ] && mkdir -p "$HOME"/.config/dunst || \
     printf "%b\n" "${RED}ERROR:${RESET} Directory already exists"
 
-[ ! -L "$HOME"/.config/dunst/dunstrc ] && ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc" \
+[ ! -L "$HOME"/.config/dunst/dunstrc ] && ln -sf "$PWD/dunstrc" "$HOME/.config/dunst/dunstrc" && \
     printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success."
 [ ! -f "$HOME"/.config/dunst/normal.png ] && cp "$PWD/normal.png" "$HOME/.config/dunst/normal.png"
 [ ! -f "$HOME"/.config/dunst/critical.png ] && cp "$PWD/critical.png" "$HOME/.config/dunst/critical.png"
