@@ -7,4 +7,4 @@ RESET="\033[0m"
 [ ! -L "$HOME"/.config/gh/config.yml ] && \
     ln -sf "$PWD/config.yml" "$HOME/.config/gh/config.yml" && \
     printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink success. (github-cli)"
-printf "\n%s\n" 'Might as well do gh auth --with-token <token>'
+printf "\n%b\n" "${GREEN}Might as well do gh auth --with-token <token>${RESET}"
