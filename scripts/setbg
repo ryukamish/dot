@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # This script is basically to set wallpaper when starting the computer as it does not require gui to start or any input
 

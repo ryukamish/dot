@@ -171,7 +171,8 @@ map <leader>c :!clear && shellcheck -x %<CR>
 nnoremap <leader>sf :source %<cr>
 
 " Set filetype for custom files
-autocmd BufNewFile,BufRead README set ft=markdown
+"autocmd BufNewFile,BufRead README set ft=markdown
+autocmd BufRead ! *.c set textwidth=72
 
 " Markdown heading keybinding
 function! UnderlineHeading(level)

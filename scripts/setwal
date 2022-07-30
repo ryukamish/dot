@@ -1,32 +1,32 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # This is more of a choose and set wallpaper type of script which requires few programs
 
 # fuction to check dependencies
 dep_ck() {
   for pr; do
-    type -ap $pr >/dev/null 2>&1 || echo -e "command $pr not found, install: $pr" 1
+    type "$pr" >/dev/null 2>&1 || echo "command ${pr} not found, install: ${pr}"
   done
 }
 
 # choose a wallpaper from the desired directory
 wall_set() {
-  cmd=$(find $HOME/pix/wall -type f || echo "wallpaper directory does not exist.")
-  sxiv -fto $cmd
+  cmd=$(find "$HOME"/pix/wall -type f || echo "wallpaper directory does not exist.")
+  sxiv -fto "$cmd"
 }
 
 # if dwm is your window manager then it uses `sed` to delete the last line of the colorschem file wal generates
 make_prep() {
-  wal -c && wal -i $wallset
+  wal -c && wal -i "$wallset"
 }
 
 # now recompile dwm and dmenu and apply the new colorscheme
 _make() {
   # make dwm and dmenu
-  cd $HOME/.local/src/dwm && sudo make clean install 2>/dev/null
-  cd $HOME/.local/src/dmenu && sudo make clean install 2>/dev/null
+  cd "$HOME"/.local/src/dwm && sudo make clean install 2>/dev/null
+  cd "$HOME"/.local/src/dmenu && sudo make clean install 2>/dev/null
 }
 
 dep_ck "sxiv" "xwallpaper" "wal"
-wallset=$(wall_set) && xwallpaper --zoom $wallset && echo "wallpaper changed..." && notify-send "wallpaper set..."
+wallset=$(wall_set) && xwallpaper --zoom "$wallset" && echo "wallpaper changed..." && notify-send "wallpaper set..."
 make_prep

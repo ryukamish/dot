@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 screen=$(test -n "$DISPLAY")
 if [ -z "$screen" ]; then
   tmux attach || tmux new-session

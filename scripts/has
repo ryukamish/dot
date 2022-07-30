@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
-red='\[\e[31m\]'
-reset='\[\e[0m\]'
+#!/bin/sh
+red="\[\e[31m\]"
+green="\[\e[32m\]"
+reset="\[\e[0m\]"
 
-cmd=$(type -p "$1")
+cmd=$(type "$1")
 
-if [ -z $cmd ]; then
-  echo "Warning!
-Looks like the package is not installed!"
+if [ -z "$cmd" ]; then
+    printf "%b\n" "${red}WARNING:${reset} Looks like the package is not installed"
 else
-  echo "The package is installed!"
+    printf "%b\n" "${green}CONFIRMATION:${reset} The package is installed."
 fi
