@@ -1,0 +1,5 @@
+#!/bin/sh
+
+symlink="$HOME/.config/wget/wgetrc"
+[ ! -d "$HOME/.config/wget" ] && mkdir -p "$HOME/.config/wget"
+[ ! -L "$symlink" ] && ln -sf "$PWD/wgetrc" "$HOME/.config/wget/wgetrc"

@@ -30,7 +30,7 @@ set ruler " see ruf for formatting
 set expandtab
 
 " tab stop
-set tabstop=4
+set tabstop=8
 
 " To open and jump to another buffer without closing vim
 set path+=**
@@ -39,7 +39,7 @@ set path+=**
 set wildmenu
 
 " disable relative line numbers, remove no to sample it
-set norelativenumber
+set number
 
 " turn on default spell checking
 " set spell

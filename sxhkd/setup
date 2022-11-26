@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+[ ! -d "$HOME/.config/sxhkd" ] && mkdir -p "$HOME/.config/sxhkd"
+[ ! -L "$HOME/.config/sxhkd/sxhkdrc" ] && ln -sf "$PWD/sxhkdrc" "$HOME/.config/sxhkd/sxhkdrc"

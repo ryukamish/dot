@@ -149,3 +149,5 @@ alias free='free -h'
 alias c='printf "\e[H\e[2J"'
 
 _have vim && alias vi=vim
+
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
