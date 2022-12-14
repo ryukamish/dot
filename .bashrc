@@ -62,7 +62,7 @@ export LESSHISTFILE="-"
 export HISTFILE="${XDG_DATE_HOME:-$HOME/.local/share}/history"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 # other programs
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 
 # ================================== bash shell options ================================================
 
@@ -147,6 +147,8 @@ alias '??'=google
 alias chmox='chmod +x'
 alias free='free -h'
 alias c='printf "\e[H\e[2J"'
+#alias for wget which resumes downloads
+alias wget='wget -c'
 
 _have vim && alias vi=vim
 
