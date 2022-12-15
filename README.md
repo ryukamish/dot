@@ -45,15 +45,26 @@ This flag inside a squared brackets checks if a file exists and is a symlink. Ve
 The `-f` flag check a file exists and is a regular file and the `-d` flag checks if a directory exists or not.
 - Use the `-L` flag to check if a file exist and is a symlink.
 
+(dated Dec 15 2022) To print values with awk having delimiter the option `-F` should be used. The awk command is very simple and easy to use. Today I only found out about how to print a set of values with awk. I also found out about the `tr` command which translates the output with the desired characters.
+
+```bash
+# The awk command
+awk -F\" '{ print $2 }' # taking delimiter " and printing the second value
+# the tr command
+tr ' ' '\n'             # replace empty space with newline
+```
+
+- With `awk` to use it with a delimiter the option `-F` should be used.
+
 
 TODO
 ----
 
-- (DONE) Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
-- (DONE) Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
-- (DONE) Add a `README` to the new directories and explain about them.
-- (DONE) Remove the need to run credential store cache commnad and implement to the [config](./git/config) file.
-- (DONE) Update README.md file in directories.
+[x] Write a script to shutdown,reboot and sleep. (for Arch based distros and debian based distros)
+[x] Figure out why in `Artix Linux` in the `openrc` init system, vim does not show ascii characters and the above directory structure does not show the beautiful lines in in `Artix Linux` edition of vim.
+[x] Add a `README` to the new directories and explain about them.
+[x] Remove the need to run credential store cache commnad and implement to the [config](./git/config) file.
+[x] Update README.md file in directories.
 
 Legal
 -----
