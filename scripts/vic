@@ -1,8 +1,12 @@
 #!/bin/sh
+RED="\033[1;31m"
+RESET="\033[0m"
 cmd=$(which "$1")
 editor="vim"
 if [ -n "$cmd" ]; then
     command -v "$editor" && exec "$editor" "$cmd"
+elif [ -z "${cmd}" ]; then
+    printf "%b\n" "${RED}FAIL${RESET} No command name is given."
 else
     echo "The required program vim is not installed,install: $editor"
 fi
