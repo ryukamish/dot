@@ -3,6 +3,11 @@
 GREEN="\033[1;32m"
 RESET="\033[0m"
 
+# check for required programs:
+# xsel, clipmenu, clipmenud, sxhkd, git, lynx, tmux, vim, dunst
+PROGRAM="xsel clipmenu clipmenud clipnotify sxhkd git lynx tmux vim dunst"
+
+
 [ ! -L "$HOME"/.bashrc ] && \
     ln -sf "$PWD/.bashrc" "$HOME/.bashrc" && \
     printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful! (bashrc)"
@@ -22,7 +27,9 @@ RESET="\033[0m"
     ln -sf "$PWD/user-dirs.dirs" "$HOME/.config/user-dirs.dirs" && \
     printf "%b\n" "${GREEN}SUCCESS:${RESET} Symlink successful. (user-dirs.dirs)"
 
-for i in vim tmux x11 dunst lynx gh git sxiv fontconfig;
+DIR="vim tmux x11 dunst lynx gh git sxiv fontconfig wget sxhkd"
+
+for i in "$DIR";
 do
     cd "$i" && ./setup
     cd - || printf "%b\n" "${RED}ERROR:${RESET} Directory $i does not exist" || \

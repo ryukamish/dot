@@ -52,10 +52,10 @@ set t_vb=
 
 let mapleader=","
 
-set softtabstop=4
+set softtabstop=8
 
 " mostly used with >> and <<
-set shiftwidth=4
+set shiftwidth=8
 
 if v:version >= 800
     " stop vim from silently messing with files that it shouldn't
