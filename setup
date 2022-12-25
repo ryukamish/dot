@@ -5,7 +5,7 @@ RESET="\033[0m"
 
 # check for required programs:
 # xsel, clipmenu, clipmenud, sxhkd, git, lynx, tmux, vim, dunst
-PROGRAM="xsel clipmenu clipmenud clipnotify sxhkd git lynx tmux vim dunst"
+PROGRAM="xclip sxhkd git lynx tmux vim dunst"
 
 
 [ ! -L "$HOME"/.bashrc ] && \
