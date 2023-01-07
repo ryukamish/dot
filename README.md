@@ -21,6 +21,11 @@ Many of the configuration are inspired from [rwxrob](https://github.com/rwxrob) 
 └── x11
 ```
 
+How to use this config?
+-----------------------
+
+Just using the [setup](/setup) script should do the trick.
+
 New Found Knowledge
 -------------------
 
@@ -70,5 +75,5 @@ TODO
 Legal
 -----
 
-Copyright 2022 [Kunal Munda](https://github.com/ryukamish) <br>
+Copyright 2023 [Kunal Munda](https://github.com/ryukamish) <br>
 Released under Apache-2.0 Licence
