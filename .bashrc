@@ -68,7 +68,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 
 shopt -s checkwinsize
 shopt -s expand_aliases
-shopt -s globstar
+shopt -s globstar       # matches all the directories and subdirectories with the tab key
 shopt -s dotglob
 shopt -s extglob
 
