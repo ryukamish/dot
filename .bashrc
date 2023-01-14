@@ -69,8 +69,8 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 shopt -s checkwinsize
 shopt -s expand_aliases
 shopt -s globstar       # matches all the directories and subdirectories with the tab key
-shopt -s dotglob
-shopt -s extglob
+shopt -s dotglob        # includes filenames beginning with a `.' in the results of pathname expansion
+shopt -s extglob        # extended pattern matching features
 
 # ================================== history ==================================================
 
@@ -123,21 +123,21 @@ _source_if "$GHREPOS/dot/gh/gh-completion"
 # =================================== aliases ==============================================
 
 unalias -a
-# ls commands
+# === ls commands ===
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lah'
-# git aliases
+# === git aliases ===
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push origin $(git branch --show-current)'
-# Navigation
+# === Navigation ===
 alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-# grep aliases
+# === grep aliases ===
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -152,4 +152,5 @@ alias wget='wget -c'
 
 _have vim && alias vi=vim
 
+# checks if the booted tty is 1 and then executes `X' if it has `X'
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
