@@ -70,7 +70,7 @@ shopt -s checkwinsize
 shopt -s expand_aliases
 shopt -s globstar       # matches all the directories and subdirectories with the tab key
 shopt -s dotglob
-shopt -s extglob
+shopt -s extglob        # the extended pattern matching features
 
 # ================================== history ==================================================
 
@@ -146,7 +146,7 @@ alias '?'=duck
 alias '??'=google
 alias chmox='chmod +x'
 alias free='free -h'
-alias c='printf "\e[H\e[2J"'
+alias cl='printf "\e[H\e[2J"'
 #alias for wget which resumes downloads
 alias wget='wget -c'
 
