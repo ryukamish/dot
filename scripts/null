@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This bash script takes input of a file or a link and curls it to the null pointer. 🕳
+
 RED="\033[1;31m"
 RESET="\033[0m"
 
