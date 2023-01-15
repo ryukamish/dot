@@ -69,13 +69,10 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 shopt -s checkwinsize
 shopt -s expand_aliases
 shopt -s globstar       # matches all the directories and subdirectories with the tab key
-<<<<<<< HEAD
 shopt -s dotglob
 shopt -s extglob        # the extended pattern matching features
-=======
 shopt -s dotglob        # includes filenames beginning with a `.' in the results of pathname expansion
 shopt -s extglob        # extended pattern matching features
->>>>>>> 794939d2f2c1c3802a6e25cfab7d5202087bfaea
 
 # ================================== history ==================================================
 
