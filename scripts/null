@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+RED="\033[1;31m"
+RESET="\033[0m"
+
+# declaring the null pointer
+null="https://0x0.st"
+# declaring options for the null pointer
+opts=" -Fsecret= -Fexpires=1"
+
+case "$1" in
+    http|https://[a-zA-Z0-9]*) curl -F"url=$1" ${opts} ${null} ;;
+    *.[a-zA-Z0-9]*) curl -F"file=@$1" ${opts} ${null} ;;
+    *) printf "%b\n" "${RED}ERROR:${RESET} Invalid format of file or url." && exit 1 ;;
+esac
