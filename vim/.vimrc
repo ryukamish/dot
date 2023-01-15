@@ -30,7 +30,7 @@ set ruler " see ruf for formatting
 set expandtab
 
 " tab stop
-set tabstop=8
+set tabstop=4
 
 " To open and jump to another buffer without closing vim
 set path+=**
@@ -52,10 +52,10 @@ set t_vb=
 
 let mapleader=","
 
-set softtabstop=8
+set softtabstop=4
 
 " mostly used with >> and <<
-set shiftwidth=8
+set shiftwidth=4
 
 if v:version >= 800
     " stop vim from silently messing with files that it shouldn't
@@ -70,7 +70,7 @@ if v:version >= 800
 endif
 
 " mark trailing spaces as errors
-match IncSearch '\s\+$'
+" match IncSearch '\s\+$'
 
 " enough for line numbers + gutter within 80 standard
 "set textwidth=72
