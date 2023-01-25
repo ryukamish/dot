@@ -29,6 +29,18 @@ RESET="\033[0m"
 
 DIR="vim tmux x11 dunst lynx gh git sxiv fontconfig wget sxhkd"
 
+# check for the .config directory and make directories inside it
+config="$HOME/.config"
+if [ -d ${config} ];
+then
+        for i in ${DIR};
+        do
+            mkdir -p "${config}/${i}"
+        done && continue || exit 1
+else
+    printf '%s\n' "The directory ${config} does not exist."
+fi
+
 for i in "$DIR";
 do
     cd "$i" && ./setup
