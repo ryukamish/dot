@@ -1,12 +1,18 @@
 #!/bin/sh
 
 GREEN="\033[1;32m"
+RED="\033[1;31m"
 RESET="\033[0m"
 
-# check for required programs:
-# xsel, clipmenu, clipmenud, sxhkd, git, lynx, tmux, vim, dunst
-# PROGRAM="xclip sxhkd git lynx tmux vim dunst"
+dep_chk(){
+    for pr; do
+    # The below command is being redirected to /dev/null, the output of the command with the standard input
+    # and the errors is being redirected to /dev/null
+        command -v "$@" 2>&1> /dev/null || printf '%b\n' "The program ${RED}${pr}${RESET} is not installed, install: ${pr}"
+    done  
+}
 
+dep_chk "tmux" "sxiv" "git" "dunst" "lynx" "sxhkd" "vim" "wget"
 
 [ ! -L "$HOME"/.bashrc ] && \
     ln -sf "$PWD/.bashrc" "$HOME/.bashrc" && \
