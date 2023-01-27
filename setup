@@ -9,7 +9,7 @@ dep_chk(){
     # The below command is being redirected to /dev/null, the output of the command with the standard input
     # and the errors is being redirected to /dev/null
         command -v "$@" 2>&1> /dev/null || printf '%b\n' "The program ${RED}${pr}${RESET} is not installed, install: ${pr}"
-    done  
+    done
 }
 
 dep_chk "tmux" "sxiv" "git" "dunst" "lynx" "sxhkd" "vim" "wget"
@@ -37,14 +37,20 @@ DIR="vim tmux x11 dunst lynx gh git sxiv fontconfig wget sxhkd"
 
 # check for the .config directory and make directories inside it
 config="$HOME/.config"
-if [ -d ${config} ];
+if [ -d "${config}" ];
 then
-        for i in ${DIR};
+        for i in "${DIR}";
         do
             mkdir -p "${config}/${i}"
-        done && continue || exit 1
+        done
 else
-    printf '%s\n' "The directory ${config} does not exist."
+        printf "%b\n" "The directory ${config} does not exist.\n${GREEN}MKDIR: ${RESET}Creating directories." && mkdir -p "$HOME"/.config
+        if [ -d "${config}" ]; then
+            for i in "${DIR}";
+            do
+                mkdir -p "${config}/${i}" && continue || break
+            done
+        fi
 fi
 
 for i in "$DIR";
