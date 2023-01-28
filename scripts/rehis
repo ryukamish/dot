@@ -13,4 +13,4 @@ RED="\033[1;31m"
 RESET="\033[0m"
 
 file="$HOME/.local/share/history"
-[ ! -z "${file}" ] || printf "%b\n" "${RED}FAIL${RESET} ${file} does not exist." && cat "${file}" | fzf --layout=reverse --height 40% --border
+[ ! -z "${file}" ] || printf "%b\n" "${RED}FAIL${RESET} ${file} does not exist." && $(cat "${file}" | fzf --layout=reverse --height 40% --border)
