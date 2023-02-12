@@ -1,16 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # This script assumes the bash bistory file is in the home directory,
 # but if it's not the case then it will give an error.
 #
 # The only other program which is needed is fzf
+#
+# Things to keep in mind are the following things:
+#       1. Make sure that the 'history' file variable is set to the appropriate directory, otherwise this will not work (bash defaults to "$HOME/.bash_history")
+#       2. The variable "$HISTFILE" defines where to store the bash history file
 
 RED="\033[1;31m"
 RESET="\033[0m"
 
-file="$HOME/.bash_history" && _history="cat ${file}"
-if [[ ! -z ${_history} ]]; then
-    $(${_history} | fzf --layout=reverse --height 40% --border)
-else
-    printf "%b\n" "${RED}ERROR:${RESET} The file ${file} does not exist or the program fzf is not installed."
-fi
+file="$HOME/.local/share/history"
+[ ! -z "${file}" ] || printf "%b\n" "${RED}FAIL${RESET} ${file} does not exist." && $(cat "${file}" | fzf --layout=reverse --height 40% --border)
