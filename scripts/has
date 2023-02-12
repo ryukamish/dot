@@ -5,6 +5,7 @@ reset="\[\e[0m\]"
 
 cmd=$(type "$1")
 
+# TODO Fix this issue of this giving false success even when the program is not installed.
 if [ -z "$cmd" ]; then
     printf "%b\n" "${red}WARNING:${reset} Looks like the package is not installed"
 else
